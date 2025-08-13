@@ -1,26 +1,80 @@
 @import "tailwindcss";
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Removed background-color: black; */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(180deg, #f97316 0%, #ea580c 20%, #dc2626 40%, #991b1b 70%, #450a0a 100%);
+  }
 }
+/* Neon Glitch Effect */
+.glitch {
+  color: white;
+  position: relative;
+  text-shadow:
+    0 0 5px #f97316,
+    0 0 10px #f97316,
+    0 0 20px #f97316,
+    0 0 40px #ffbb33;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(class);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  clip: rect(0, 900px, 0, 0);
+}
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #60a5fa;
+  animation: glitchTop 1s infinite linear alternate-reverse;
+}
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #f97316;
+  animation: glitchBottom 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(0, 9999px, 10px, 0); }
+  40% { clip: rect(0, 9999px, 5px, 0); }
+  60% { clip: rect(0, 9999px, 12px, 0); }
+  80% { clip: rect(0, 9999px, 2px, 0); }
+  100% { clip: rect(0, 9999px, 0, 0); }
+}
+@keyframes glitchBottom {
+  0% { clip: rect(100px, 9999px, 105px, 0); }
+  20% { clip: rect(85px, 9999px, 90px, 0); }
+  40% { clip: rect(70px, 9999px, 75px, 0); }
+  60% { clip: rect(55px, 9999px, 60px, 0); }
+  80% { clip: rect(40px, 9999px, 45px, 0); }
+  100% { clip: rect(100px, 9999px, 105px, 0); }
+}
+
+/* Extra spinner speed */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+}
+
