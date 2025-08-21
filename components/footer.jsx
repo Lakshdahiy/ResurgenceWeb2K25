@@ -3,21 +3,21 @@ import Link from "next/link"
 
 export default function Footer() {
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
+    
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Twitch, href: "#", label: "Twitch" },
-    { icon: Discord, href: "#", label: "Discord" },
+    { icon: Instagram, href: "https://www.instagram.com/resurgenceesports_nith?utm_source=ig_web_button_share_sheet&igsh=eWthNDg5dG40Y3l3", label: "Instagram" },
+    { icon: Youtube, href: "https://www.youtube.com/@resurgenceesportsnith7295", label: "YouTube" },
+    
+    { icon: Discord, href: "https://discord.gg/s7dC67Mwse", label: "Discord" },
   ]
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Team", href: "#team" },
-    { name: "Sponsors", href: "#sponsors" },
-    { name: "Tournaments", href: "#tournaments" },
-    { name: "News", href: "#news" },
+    { name: "Home", href: "home" },
+    { name: "About", href: "about" },
+    { name: "Team", href: "team" },
+    { name: "Sponsors", href: "sponsors" },
+    { name: "Tournaments", href: "tournaments" },
+    { name: "News", href: "news" },
   ]
 
   const legalLinks = [

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState, useEffect } from "react"
 import { Progress } from "@/components/ui/progress";
@@ -35,9 +35,11 @@ export default function Loader({ onComplete }) {
       </p>
 
       {/* Circular spinner */}
-      <div className="relative w-20 h-20 mb-8">
-        <div className="absolute inset-0 border-4 border-orange-500 rounded-full animate-spin-slow"></div>
+      <div className="relative w-20 h-20 mb-8 flex items-center justify-center">
+        <div className="absolute inset-0 border-4 border-orange-500 rounded-full"></div>
         <div className="absolute inset-2 border-4 border-transparent border-t-orange-500 rounded-full animate-spin"></div>
+        {/* Centered icon */}
+        <img src='/resurgenceIcon.png' className="w-13 h-13 z-10" alt="Resurgence Icon"/>
       </div>
 
 
@@ -46,4 +48,3 @@ export default function Loader({ onComplete }) {
     </div>
   )
 }
-

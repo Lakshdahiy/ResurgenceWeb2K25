@@ -60,7 +60,7 @@ export default function UpcomingEvents() {
       category: "Pro League",
     },
     {
-      id: 4,
+      id: 5,
       title: "Pro League Season 2",
       date: "April 5, 2024",
       time: "5:00 PM EST",
