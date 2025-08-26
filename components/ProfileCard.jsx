@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useCallback, useMemo, useState } from "react";
 import { Users, Award, Trophy, Crown, Zap, Menu, X } from 'lucide-react';
+import profilesData from "../MemberData/members.json"
 
 // --- CSS for the entire application ---
 const styles = `
@@ -56,6 +57,7 @@ body {
 .App-header {
   text-align: center;
   margin-bottom: 40px;
+  margin-top:10px;
   grid-column: 2 / -1; /* Header spans the main content column */
 }
 
@@ -546,7 +548,7 @@ const ProfileCardComponent = ({
   mobileTiltSensitivity = 5,
   miniAvatarUrl,
   name = "Javi A. Torres",
-  title = "Software Engineer",
+  branch,
   handle = "javicodes",
   status = "Online",
   contactText = "Contact",
@@ -793,7 +795,7 @@ const ProfileCardComponent = ({
           <div className="pc-content">
             <div className="pc-details">
               <h3>{name}</h3>
-              <p>{title}</p>
+              <p>{branch}</p>
             </div>
           </div>
         </div>
@@ -818,28 +820,15 @@ const ProfileCardGrid = ({ profiles }) => {
   );
 };
 
-// Reusable component for each year's team section button.
-function TeamButton({ title, icon, onClick, hoverColor }) {
-  return (
-    <button
-      onClick={onClick}
-      className={`w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 ${hoverColor} hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900`}
-    >
-      <span className="mb-2 sm:mb-0 sm:mr-4 text-white">{icon}</span>
-      <span className="font-bold text-gray-300">{title}</span>
-    </button>
-  );
-}
-
-// Team Sidebar Component
-function TeamSidebar({ isOpen, onClose }) {
-  const handleTitleClick = (title) => {
-    console.log(`Clicked on: ${title}`);
-    onClose(); // Close sidebar after a click on mobile
+// --- Team Sidebar Component ---
+function TeamSidebar({ onSelectYear, onClose }) {
+  const handleItemClick = (yearTitle) => {
+    onSelectYear(yearTitle);
+    onClose();
   };
 
   return (
-    <div className={`sidebar-container p-6  text-gray-200 font-inter ${isOpen ? 'open' : ''}`}>
+    <div className="sidebar-container p-6 text-gray-200 font-inter">
       {/* Sidebar Header */}
       <div className="mb-6 text-center">
         <h1 className="text-3xl font-extrabold text-white mb-2">
@@ -851,68 +840,70 @@ function TeamSidebar({ isOpen, onClose }) {
           Meet our competitive gaming champions.
         </p>
       </div>
-      
+
       {/* Horizontal Divider */}
       <hr className="border-gray-700 mb-6" />
 
-      {/* Team Sections */}
+      {/* Team Sections - Reverted to original appearance with click handlers */}
       <div className="space-y-4">
-        <TeamButton title="Super Final Year" icon={<Crown size={20} />} onClick={() => handleTitleClick('The Seniors')} hoverColor="hover:bg-red-600" />
-        <TeamButton title="Final Year" icon={<Trophy size={20} />} onClick={() => handleTitleClick('The Seniors')} hoverColor="hover:bg-red-600" />
-        <TeamButton title="PreFinal Year" icon={<Award size={20} />} onClick={() => handleTitleClick('The Juniors')} hoverColor="hover:bg-green-600" />
-         <TeamButton title="The Sophomores" icon={<Zap size={20}/>} onClick={() => handleTitleClick('The Sophomores')} hoverColor="hover:bg-blue-600" />
-        <TeamButton title="The Freshmen" icon={<Users size={20} />} onClick={() => handleTitleClick('The Freshmen')} hoverColor="hover:bg-purple-600" />
-        
+        <button
+          onClick={() => handleItemClick('Freshmen')}
+          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-purple-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+        >
+          <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Users size={20} /></span>
+          <span className="font-bold text-gray-300">The Freshmen</span>
+        </button>
+        <button
+          onClick={() => handleItemClick('Super Final Year')}
+          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+        >
+          <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Crown size={20} /></span>
+          <span className="font-bold text-gray-300">Super Final Year</span>
+        </button>
+        <button
+          onClick={() => handleItemClick('Final Year')}
+          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+        >
+          <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Trophy size={20} /></span>
+          <span className="font-bold text-gray-300">Final Year</span>
+        </button>
+        <button
+          onClick={() => handleItemClick('PreFinal Year')}
+          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-green-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+        >
+          <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Award size={20} /></span>
+          <span className="font-bold text-gray-300">PreFinal Year</span>
+        </button>
+        <button
+          onClick={() => handleItemClick('Sophomore')}
+          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+        >
+          <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Zap size={20}/></span>
+          <span className="font-bold text-gray-300">Sophomore</span>
+        </button>
       </div>
     </div>
   );
 }
-
+// --- App Component (Main) ---
 // --- App Component (Main) ---
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // Set default selected year to 'Final Year'
+  const [selectedYear, setSelectedYear] = useState('Final Year');
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const sampleProfiles = [
-    {
-      name: "Javi Torres",
-      title: "Software Engineer",
-      handle: "javicodes",
-      status: "Online",
-      // Updated with a working placeholder image URL
-      avatarUrl:"/DemoImage.png",
-      // Using an inline SVG for the icon
-      
-      miniAvatarUrl: "https://placehold.co/100x100/0e152e/d0a0b6?text=JT",
-    },
-    {
-      name: "Alex Smith",
-      title: "Product Manager",
-      handle: "asmith",
-      status: "Away",
-      avatarUrl: "https://placehold.co/400x550/19082f/c9b6f4?text=A.S.",
-      miniAvatarUrl: "https://placehold.co/100x100/19082f/c9b6f4?text=AS",
-    },
-    {
-      name: "Emily Chen",
-      title: "UX Designer",
-      handle: "emily_c",
-      status: "Online",
-      avatarUrl: "https://placehold.co/400x550/2b0e35/f0a4d0?text=E.C.",
-      miniAvatarUrl: "https://placehold.co/100x100/2b0e35/f0a4d0?text=EC",
-    },
-    {
-      name: "Michael Lee",
-      title: "Data Scientist",
-      handle: "mlee",
-      status: "In a meeting",
-      avatarUrl: "https://placehold.co/400x550/333333/FFFFFF?text=M.L.",
-      miniAvatarUrl: "https://placehold.co/100x100/333333/FFFFFF?text=ML",
-    },
-  ];
+  const handleSelectYear = (year) => {
+    setSelectedYear(year);
+  };
+
+  const filteredProfiles = useMemo(() => {
+    // Filter profiles based on selectedYear
+    return profilesData.filter(profile => profile.year === selectedYear);
+  }, [selectedYear]);
 
   return (
     <>
@@ -924,16 +915,16 @@ const App = () => {
         </button>
 
         {/* Sidebar container */}
-        <TeamSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+        <TeamSidebar onSelectYear={handleSelectYear} onClose={() => setIsSidebarOpen(false)} />
         <div className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={() => setIsSidebarOpen(false)} />
 
         {/* Main content area */}
         <div>
           <header className="App-header">
-            <h1></h1>
+            <h1>{selectedYear}</h1>
           </header>
           <main>
-            <ProfileCardGrid profiles={sampleProfiles} />
+            <ProfileCardGrid profiles={filteredProfiles} />
           </main>
         </div>
       </div>

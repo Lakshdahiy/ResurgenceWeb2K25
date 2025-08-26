@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Anurag Goyal",
+    "branch": "Electrical",
+    "hometown": "Sarkaghat",
+    "year": "PreFinal Year",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=1tMO1L4rJCHTsQVkkHIyySFQcOf0KmTMd",
+    "linkedin": "https://www.linkedin.com/in/anurag-goyal-07944029b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "discord": "itachim7",
+    "fav_game": "CS GO",
+    "email": "anu345bhi@gmail.com"
+  },
+  {
+    "name": "Laksh Dahiya",
+    "branch": "civil",
+    "hometown": "sonipat,Haryana",
+    "year": "PreFinal Year",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=1HTQ8_jbmM3Jzpy6ru-oeo6_rzWJ9vKNc",
+    "linkedin": "https://www.linkedin.com/in/laksh-dahiya-b21932261/",
+    "discord": "",
+    "fav_game": "Ghost of Tsushima",
+    "email": "lakshdahiya2005@gmail.com"
+  },
+  {
+    "name": "Shubham Pathania",
+    "branch": "Dual Electronics and Communication Engineering",
+    "hometown": "Dharampur , Mandi",
+    "year": "Sophomore",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=1eCqtd8CbeKk6IiW2AL1a8rsLE0qJ-VL0",
+    "linkedin": "https://www.linkedin.com/in/shubham-pathania-991596323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "discord": "",
+    "fav_game": "Fifa 24 , efootball 25",
+    "email": "shubhampathania1001@gmail.com"
+  },
+  {
+    "name": "Devansh Singh",
+    "branch": "CSE",
+    "hometown": "Prayagraj,Uttar Pradesh",
+    "year": "Sophomore",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=1OvVAodNpvfidjJHUWgNJD6GwRX98Ry3z",
+    "linkedin": "https://www.linkedin.com/in/devansh-singh-54bb2b312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "discord": "",
+    "fav_game": "Tomb raider",
+    "email": "24bcs039@nith.ac.in"
+  },
+  {
+    "name": "Sujal Chouhan",
+    "branch": "CSE",
+    "hometown": "Kullu",
+    "year": "PreFinal Year",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=15mBSiToY7VF308R85xkwoC3WOAaJL-1o",
+    "linkedin": "https://www.linkedin.com/in/sujal-chouhan-136550289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "discord": "hola_amigo69069",
+    "fav_game": "idk",
+    "email": "sujalchauhan78@gmail.com"
+  },
+  {
+    "name": "Manan Jindal",
+    "branch": "Electrical",
+    "hometown": "Ghaziabad",
+    "year": "Sophomore",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=1JwAJs_aKyN1KplzdCtjIV-EcuW--8vDM",
+    "linkedin": "https://www.linkedin.com/in/manan-jindal-36a320336/",
+    "discord": "https://discordapp.com/users/1408931726251524218",
+    "fav_game": "FIFA",
+    "email": "24dec013@nith.ac.in"
+  },
+  {
+    "name": "Sujal Chandel",
+    "branch": "chemical",
+    "hometown": "una",
+    "year": "Sophomore",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=1DLYZZ4GWyd1fKAWCc-5Lz84RpfOXLpFR",
+    "linkedin": "www.linkedin.com/in/sujal-chandel-688532378",
+    "discord": "",
+    "fav_game": "tekken",
+    "email": "24bch055@gmail.com"
+  },
+  {
+    "name": "Akrit Thakur",
+    "branch": "ECE",
+    "hometown": "Bilaspur",
+    "year": "Final Year",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=14QLNTngv-PtnLIadXdMfUyxs2blZEfVw",
+    "linkedin": "https://www.linkedin.com/in/akrit-thakur-b80163365?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "discord": "",
+    "fav_game": "BGMI",
+    "email": "akritthakur302004@gmail.com"
+  },
+  {
+    "name": "Abhay Dhiman",
+    "branch": "CSE",
+    "hometown": "UNA",
+    "year": "Sophomore",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=1Qymo7mAzgRQKMfIc-OykX3crXyVJD7c",
+    "linkedin": "https://www.linkedin.com/in/abhay-dhiman-b91bb0327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "discord": "",
+    "fav_game": "BGMI",
+    "email": "24bcs003@nith.ac.in"
+  },
+  {
+    "name": "Vansh Chopra",
+    "branch": "Electrical",
+    "hometown": "Bilaspur",
+    "year": "Sophomore",
+    "avatarUrl": "https://drive.google.com/uc?export=view&id=1HnZUnkEPNJJpNYm2B1ssMbPhUO4EBbIy",
+    "linkedin": "https://www.linkedin.com/in/vansh-chopra-179024233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "discord": "",
+    "fav_game": "",
+    "email": "24bee104@nith.ac.in"
+  }
+]
