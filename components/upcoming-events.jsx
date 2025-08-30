@@ -20,6 +20,19 @@ export default function UpcomingEvents() {
       status: "Upcoming",
       category: "Tournament",
     },
+        {
+      id: 2,
+      title: "STUMBLE GUYS X CLASH ROYALE",
+      date: "31 august",
+      location: "Online mode",
+      prize: "2000",
+      description: "The ultimate showdown between the best gaming teams in campus",
+      image: "./stumble.jpg",
+      status: "Upcoming",
+      category: "Tournament",
+    },
+    
+
     
   ]
 
