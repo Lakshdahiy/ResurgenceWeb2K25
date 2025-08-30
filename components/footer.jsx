@@ -15,9 +15,9 @@ export default function Footer() {
     { name: "Home", href: "home" },
     { name: "About", href: "about" },
     { name: "Team", href: "team" },
-    { name: "Sponsors", href: "sponsors" },
-    { name: "Tournaments", href: "tournaments" },
-    { name: "News", href: "news" },
+    { name: "Sponsors", href: "#sponsors" },
+    { name: "Events", href: "#events" },
+    
   ]
 
   const legalLinks = [
@@ -28,7 +28,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-black border-t border-white/20">
+    <footer id="footer" className="bg-black border-t border-white/20">
       {" "}
       {/* Changed to bg-black */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
@@ -81,52 +81,29 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-white flex-shrink-0" />
-                <span className="text-white/80">contact@resurgence.gg</span>
+                <span className="text-white/80">resurgence@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
-                <span className="text-white/80">+1 (555) 123-4567</span>
+                <span className="text-white/80">+91 9896096559</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-white flex-shrink-0" />
-                <span className="text-white/80">Gaming District, Esports City</span>
+                <span className="text-white/80">National Institute of Technology Hamirpur</span>
               </div>
             </div>
           </div>
 
           {/* Newsletter */}
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-6">Stay Updated</h3>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Get the latest news, match results, and exclusive content.
-            </p>
-            <div className="space-y-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-white/50 focus:ring-2 focus:ring-white/20 transition-all duration-300"
-              />
-              <button className="w-full bg-white text-orange-600 hover:bg-gray-100 px-4 py-3 rounded-lg font-semibold transition-all duration-300">
-                Subscribe
-              </button>
-            </div>
-          </div>
+          
         </div>
 
         {/* Bottom Section */}
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-white/80 text-sm">© 2024 Resurgence Gaming. All rights reserved.</div>
+            
             <div className="flex flex-wrap justify-center md:justify-end gap-6">
-              {legalLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  className="text-white/80 hover:text-white text-sm transition-colors duration-300"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              
             </div>
           </div>
         </div>

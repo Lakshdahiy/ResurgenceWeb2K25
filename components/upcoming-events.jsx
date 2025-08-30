@@ -9,73 +9,26 @@ export default function UpcomingEvents() {
   const events = [
     {
       id: 1,
-      title: "Championship Finals 2024",
-      date: "March 15, 2024",
+      title: "Resurgence BGMI KickOff",
+      date: "5-6-7 September",
       time: "7:00 PM EST",
-      location: "Gaming Arena, Los Angeles",
-      prize: "$50,000",
-      participants: "32 Teams",
-      description: "The ultimate showdown between the best gaming teams worldwide.",
-      image: "/placeholder.svg?height=300&width=500&text=Championship+Finals",
-      status: "Featured",
+      location: "Online mode",
+      prize: "Yet to be Revealed",
+      participants: "20 Teams (can be updated)",
+      description: "The ultimate showdown between the best gaming teams in campus",
+      image: "https://i.pinimg.com/736x/9c/eb/61/9ceb61e3b21e0f6316b72685c9248e77.jpg",
+      status: "Upcoming",
       category: "Tournament",
     },
-    {
-      id: 2,
-      title: "Spring Qualifier Series",
-      date: "March 22, 2024",
-      time: "6:00 PM EST",
-      location: "Online Tournament",
-      prize: "$15,000",
-      participants: "64 Teams",
-      description: "Qualify for the major league championships in this intense competition.",
-      image: "/placeholder.svg?height=300&width=500&text=Spring+Qualifier",
-      status: "Open Registration",
-      category: "Qualifier",
-    },
-    {
-      id: 3,
-      title: "Community Gaming Night",
-      date: "March 28, 2024",
-      time: "8:00 PM EST",
-      location: "Resurgence Gaming Hub",
-      prize: "Prizes & Giveaways",
-      participants: "Open to All",
-      description: "Join us for a fun community event with games, prizes, and networking.",
-      image: "/placeholder.svg?height=300&width=500&text=Community+Night",
-      status: "Free Entry",
-      category: "Community",
-    },
-    {
-      id: 4,
-      title: "Pro League Season 2",
-      date: "April 5, 2024",
-      time: "5:00 PM EST",
-      location: "Multiple Venues",
-      prize: "$100,000",
-      participants: "16 Pro Teams",
-      description: "The second season of our professional league with the biggest prize pool yet.",
-      image: "/placeholder.svg?height=300&width=500&text=Pro+League+S2",
-      status: "Invitation Only",
-      category: "Pro League",
-    },
-    {
-      id: 5,
-      title: "Pro League Season 2",
-      date: "April 5, 2024",
-      time: "5:00 PM EST",
-      location: "Multiple Venues",
-      prize: "$100,000",
-      participants: "16 Pro Teams",
-      description: "The second season of our professional league with the biggest prize pool yet.",
-      image: "/placeholder.svg?height=300&width=500&text=Pro+League+S2",
-      status: "Invitation Only",
-      category: "Pro League",
-    },
+    
   ]
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % events.length)
+    if(events.length>0){
+    setCurrentSlide((prev) => (prev + 1) % events.length)}
+    else{
+      setCurrentSlide((prev) => (prev + 1) % events.length)
+    }
   }
 
   const prevSlide = () => {
@@ -104,7 +57,7 @@ export default function UpcomingEvents() {
   }
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black" id='events'>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -235,11 +188,11 @@ export default function UpcomingEvents() {
         </div>
 
         {/* View All Events Button */}
-        <div className="text-center mt-12">
+        {/*<div className="text-center mt-12">
           <button className="bg-white text-red-800 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
             View All Events
           </button>
-        </div>
+        </div>*/}
       </div>
     </section>
   )

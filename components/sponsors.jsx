@@ -1,5 +1,7 @@
-import { Shield, Cpu, Headphones, Monitor } from "lucide-react"
+'use client'
 
+import { Shield, Cpu, Headphones, Monitor } from "lucide-react"
+import { useRouter } from "next/navigation"
 export default function Sponsors() {
   const sponsors = [
     {
@@ -10,7 +12,7 @@ export default function Sponsors() {
     },
    
   ]
-
+const router = useRouter()
   return (
     <section id="sponsors" className="py-20 bg-black">
       {" "}
@@ -40,7 +42,7 @@ export default function Sponsors() {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+          <button onClick={() => router.push("#footer")} className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
             Become a Sponsor
           </button>
         </div>

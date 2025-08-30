@@ -2,11 +2,12 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Menu, X, ArrowRight } from "lucide-react"
-
+import { useRouter } from "next/navigation"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const lastScrollY = useRef(0)
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +32,7 @@ export default function Header() {
     { name: "Home", href: "/home" },
     { name: "About", href: "/about" },
     { name: "Team", href: "/team" },
-    { name: "Sponsors", href: "/sponsors" },
+    { name: "Sponsors", href: "#sponsors" },
   ]
 
   return (
@@ -57,7 +58,7 @@ export default function Header() {
 
             {/* Get in touch button */}
             <div className="hidden md:block">
-              <button className="bg-orange-600 text-white px-6 py-3 rounded-full font-semibold flex items-center space-x-2 hover:bg-orange-700 transition-colors duration-300">
+              <button onClick={() => router.push("/grass")}  className="bg-orange-600 text-white px-6 py-3 rounded-full font-semibold flex items-center space-x-2 hover:bg-orange-700 transition-colors duration-300">
                 <span>Get in touch</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -88,7 +89,7 @@ export default function Header() {
                   {link.name}
                 </a>
               ))}
-              <button className="bg-orange-600 text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center space-x-2 hover:bg-orange-700 transition-colors duration-300 mt-4">
+              <button  onClick={() => router.push("/grass")}  className="bg-orange-600 text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center space-x-2 hover:bg-orange-700 transition-colors duration-300 mt-4">
                 <span>Get in touch</span>
                 <ArrowRight className="w-4 h-4" />
               </button>

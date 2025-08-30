@@ -846,13 +846,7 @@ function TeamSidebar({ onSelectYear, onClose }) {
 
       {/* Team Sections - Reverted to original appearance with click handlers */}
       <div className="space-y-4">
-        <button
-          onClick={() => handleItemClick('Freshmen')}
-          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-purple-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
-        >
-          <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Users size={20} /></span>
-          <span className="font-bold text-gray-300">The Freshmen</span>
-        </button>
+        
         <button
           onClick={() => handleItemClick('Super Final Year')}
           className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
@@ -880,6 +874,13 @@ function TeamSidebar({ onSelectYear, onClose }) {
         >
           <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Zap size={20}/></span>
           <span className="font-bold text-gray-300">Sophomore</span>
+        </button>
+        <button
+          onClick={() => handleItemClick('Freshmen')}
+          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-purple-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+        >
+          <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Users size={20} /></span>
+          <span className="font-bold text-gray-300">The Freshmen</span>
         </button>
       </div>
     </div>

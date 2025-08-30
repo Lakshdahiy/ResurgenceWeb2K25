@@ -114,7 +114,7 @@ export default function AboutPage() {
             New challenger approaching—are you ready to join Resurgence? Whether you're a seasoned veteran or just starting your journey, we have a place for you.
           </p>
           <a
-            href="#" // Replace with your Discord link
+            href="https://discord.gg/s7dC67Mwse" target='_blank'// Replace with your Discord link
             className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
           >
             Sign your gamer tag, grab your controller, and let's drop in.

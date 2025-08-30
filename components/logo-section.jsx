@@ -10,25 +10,42 @@ export default function LogoSection() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-16">
-          {/* Resurgence Logo Space */}
-          <div className="bg-white/10 backdrop-blur-sm border-2 border-dashed border-white/30 rounded-2xl p-8 w-64 h-32 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-2 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">R</span>
-              </div>
-              <p className="text-white/80 font-semibold">RESURGENCE</p>
-            </div>
-          </div>
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 w-64 h-40 flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300">
+  <div className="text-center">
+    {/* Profile/Logo Container */}
+    <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-3 flex items-center justify-center overflow-hidden shadow-md">
+      <img
+        className="w-full h-full object-cover"
+        src="/res.png"
+        alt="Hillfair Logo"
+      />
+    </div>
+
+    {/* Title */}
+    <p className="text-white font-semibold text-lg tracking-wide">
+      Resurgence
+    </p>
+  </div>
+</div>
 
           {/* Hillfirar Logo Space */}
-          <div className="bg-white/10 backdrop-blur-sm border-2 border-dashed border-white/30 rounded-2xl p-8 w-64 h-32 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-2 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">H</span>
+         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 w-64 h-40 flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300">
+          <div className="text-center">
+          {/* Profile/Logo Container */}
+           <div className="w-16 h-16 bg-white/20 rounded-xl mx-auto mb-3 flex items-center justify-center overflow-hidden shadow-md">
+            <img
+             className="w-full h-full object-cover"
+             src="/res.png"
+              alt="Hillfair Logo"
+             />
               </div>
-              <p className="text-white/80 font-semibold">HILLFAIR</p>
-            </div>
-          </div>
+
+             {/* Title */}
+              <p className="text-white font-semibold text-lg tracking-wide">
+                HILLFAIR
+              </p>
+              </div>
+</div>
         </div>
       </div>
     </section>
