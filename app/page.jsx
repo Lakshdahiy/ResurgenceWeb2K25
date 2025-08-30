@@ -38,7 +38,6 @@ export default function Home() {
         <UpcomingEvents />
         <Footer />
       </main>
-      <ContactPopup open={true} onClose={() => {}} />
     </div>
   )
 }
