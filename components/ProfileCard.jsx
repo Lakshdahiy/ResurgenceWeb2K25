@@ -536,7 +536,7 @@ const adjust = (value, fromMin, fromMax, toMin, toMax) => round(toMin + ((toMax 
 const easeInOutCubic = (x) => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 const ProfileCardComponent = ({
-  avatarUrl = "https://placehold.co/400x550/0e152e/d0a0b6?text=Demo%20Image",
+  avatarUrl,
   iconUrl = "./resurgenceIcon.png",
   grainUrl,
   behindGradient,
@@ -549,11 +549,13 @@ const ProfileCardComponent = ({
   miniAvatarUrl,
   name = "Javi A. Torres",
   branch,
-  handle = "javicodes",
-  status = "Online",
+  hometown,
+  status ,
+  fav_game,
   contactText = "Contact",
   showUserInfo = true,
-  onContactClick,
+  linkedin,
+  avatarSize,
 }) => {
   const wrapRef = useRef(null);
   const cardRef = useRef(null);
@@ -735,9 +737,10 @@ const ProfileCardComponent = ({
     "--inner-gradient": innerGradient ?? DEFAULT_INNER_GRADIENT,
   }), [iconUrl, grainUrl, showBehindGradient, behindGradient, innerGradient]);
 
-  const handleContactClick = useCallback(() => {
-    onContactClick?.();
-  }, [onContactClick]);
+ const handleContactClick = useCallback((linkedinUrl) => {
+  window.open(linkedinUrl, "_blank"); // opens in new tab
+}, []);
+
 
   return (
     <div
@@ -755,6 +758,7 @@ const ProfileCardComponent = ({
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
               loading="lazy"
+              style={{ transform: `translateX(-50%) scale(${avatarSize})` }}
               onError={(e) => {
                 const target = e.target;
                 target.style.display = "none";
@@ -776,13 +780,13 @@ const ProfileCardComponent = ({
                     />
                   </div>
                   <div className="pc-user-text">
-                    <div className="pc-handle">@{handle}</div>
-                    <div className="pc-status">{status}</div>
+                    <div className="pc-handle">{hometown}</div>
+                    <div className="pc-status">{fav_game}</div>
                   </div>
                 </div>
                 <button
                   className="pc-contact-btn"
-                  onClick={handleContactClick}
+                  onClick={()=>handleContactClick(linkedin)}
                   style={{ pointerEvents: "auto" }}
                   type="button"
                   aria-label={`Contact ${name || "user"}`}
