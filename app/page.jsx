@@ -9,7 +9,7 @@ import Sponsors from "@/components/sponsors"
 import UpcomingEvents from "@/components/upcoming-events"
 import Footer from "@/components/footer"
 import Loader from "@/components/loader"
-import ContactPopup from "@/components/ContactPopup"
+
 
 export default function Home() {
   const [loading, setLoading] = useState(true)

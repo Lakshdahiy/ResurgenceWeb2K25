@@ -21,7 +21,7 @@ export default function Hero() {
           {/* Center Image */}
           <div className="relative lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
             <Image
-              src="/Hero.png"
+              src="/Hero.webp"
               alt="Gaming Champion Victory Pose"
               width={700}
               height={700}
