@@ -36,7 +36,7 @@ const styles = `
 }
 
 body {
-  background-color: #0d1222;
+  background-color: black;
   font-family: 'Inter', sans-serif;
   color: #fff;
   margin: 0;
@@ -463,7 +463,7 @@ body {
     top: 0;
     height: 100%;
     width: 280px;
-    background-color: #0d1222;
+    background-color: black;
     z-index: 100;
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);
@@ -476,7 +476,7 @@ body {
 
   .mobile-toggle-button {
     position: fixed;
-    top: 15px;
+    top: 110px;
     left: 15px;
     z-index: 101;
     background: rgba(255, 255, 255, 0.1);
@@ -810,15 +810,30 @@ const ProfileCardComponent = ({
 
 const ProfileCard = React.memo(ProfileCardComponent);
 
+// --- ProfileCardGrid Component ---
+const ProfileCardGrid = ({ profiles }) => {
+  return (
+    <div className="pc-grid-container">
+      {profiles.map((profile, index) => (
+        <ProfileCard
+          key={index}
+          {...profile}
+          
+        />
+      ))}
+    </div>
+  );
+};
+
 // --- Team Sidebar Component ---
-function TeamSidebar({ onSelectYear, onClose, open }) {
+function TeamSidebar({ onSelectYear, onClose, isOpen}) {
   const handleItemClick = (yearTitle) => {
     onSelectYear(yearTitle);
     onClose();
   };
 
   return (
-    <div className={`sidebar-container p-6 text-gray-200 font-inter${open ? " open" : ""}`}>
+    <div className={`sidebar-container p-6 text-gray-200 font-inter ${isOpen ? 'open' : ''}`}>
       {/* Sidebar Header */}
       <div className="mb-6 text-center">
         <h1 className="text-3xl font-extrabold text-white mb-2">
@@ -839,35 +854,35 @@ function TeamSidebar({ onSelectYear, onClose, open }) {
         
         <button
           onClick={() => handleItemClick('Super Final Year')}
-          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+          className="w-full p-4  rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
         >
           <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Crown size={20} /></span>
           <span className="font-bold text-gray-300">Super Final Year</span>
         </button>
         <button
           onClick={() => handleItemClick('Final Year')}
-          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+          className="w-full p-4  rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
         >
           <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Trophy size={20} /></span>
           <span className="font-bold text-gray-300">Final Year</span>
         </button>
         <button
           onClick={() => handleItemClick('PreFinal Year')}
-          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-green-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+          className="w-full p-4  rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-green-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
         >
           <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Award size={20} /></span>
           <span className="font-bold text-gray-300">PreFinal Year</span>
         </button>
         <button
           onClick={() => handleItemClick('Sophomore')}
-          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+          className="w-full p-4  rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
         >
           <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Zap size={20}/></span>
           <span className="font-bold text-gray-300">Sophomore</span>
         </button>
         <button
           onClick={() => handleItemClick('Freshmen')}
-          className="w-full p-4 bg-gray-800 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-purple-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
+          className="w-full p-4 rounded-xl text-left flex flex-col sm:flex-row items-center justify-center sm:justify-start border border-gray-700 transition duration-300 hover:bg-purple-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-gray-900"
         >
           <span className="mb-2 sm:mb-0 sm:mr-4 text-white"><Users size={20} /></span>
           <span className="font-bold text-gray-300">The Freshmen</span>
@@ -877,12 +892,11 @@ function TeamSidebar({ onSelectYear, onClose, open }) {
   );
 }
 // --- App Component (Main) ---
+// --- App Component (Main) ---
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // Set default selected year to 'Final Year'
   const [selectedYear, setSelectedYear] = useState('Final Year');
-
-  // Detect mobile device
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -893,6 +907,7 @@ const App = () => {
   };
 
   const filteredProfiles = useMemo(() => {
+    // Filter profiles based on selectedYear
     return profilesData.filter(profile => profile.year === selectedYear);
   }, [selectedYear]);
 
@@ -900,45 +915,26 @@ const App = () => {
     <>
       <style>{styles}</style>
       <div className="main-layout-container">
+        {/* Mobile toggle button */}
         <button className="mobile-toggle-button" onClick={toggleSidebar} aria-label="Toggle navigation menu">
           {isSidebarOpen ? <X size={24} color="white" /> : <Menu size={24} color="white" />}
         </button>
-        <TeamSidebar
-          onSelectYear={handleSelectYear}
-          onClose={() => setIsSidebarOpen(false)}
-          open={isSidebarOpen}
-        />
+
+        {/* Sidebar container */}
+        
         <div className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={() => setIsSidebarOpen(false)} />
+            <TeamSidebar onSelectYear={handleSelectYear} onClose={() => setIsSidebarOpen(false)} isOpen={isSidebarOpen}  />
+        {/* Main content area */}
         <div>
           <header className="App-header">
             <h1>{selectedYear}</h1>
           </header>
           <main>
-            <ProfileCardGrid
-              profiles={filteredProfiles}
-              enableTilt={!isMobile}
-              enableMobileTilt={false}
-            />
+            <ProfileCardGrid profiles={filteredProfiles} />
           </main>
         </div>
       </div>
     </>
-  );
-};
-
-// Only keep this definition of ProfileCardGrid!
-const ProfileCardGrid = ({ profiles, enableTilt, enableMobileTilt }) => {
-  return (
-    <div className="pc-grid-container">
-      {profiles.map((profile, index) => (
-        <ProfileCard
-          key={index}
-          {...profile}
-          enableTilt={enableTilt}
-          enableMobileTilt={enableMobileTilt}
-        />
-      ))}
-    </div>
   );
 };
 

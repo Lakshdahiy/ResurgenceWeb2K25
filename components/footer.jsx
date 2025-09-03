@@ -1,14 +1,15 @@
 import { Facebook, Twitter, Instagram, Youtube, Twitch, DiscIcon as Discord, Mail, Phone, MapPin } from "lucide-react"
 import Link from "next/link"
+import { FaDiscord } from "react-icons/fa";
 
 export default function Footer() {
   const socialLinks = [
     
-    { icon: Twitter, href: "#", label: "Twitter" },
+   
     { icon: Instagram, href: "https://www.instagram.com/resurgenceesports_nith?utm_source=ig_web_button_share_sheet&igsh=eWthNDg5dG40Y3l3", label: "Instagram" },
     { icon: Youtube, href: "https://www.youtube.com/@resurgenceesportsnith7295", label: "YouTube" },
     
-    { icon: Discord, href: "https://discord.gg/s7dC67Mwse", label: "Discord" },
+    { icon: FaDiscord, href: "https://discord.gg/s7dC67Mwse", label: "Discord" },
   ]
 
   const quickLinks = [
