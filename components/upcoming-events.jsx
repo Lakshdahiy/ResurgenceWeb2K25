@@ -20,6 +20,19 @@ export default function UpcomingEvents() {
       status: "Upcoming",
       category: "Tournament",
     },
+        {
+      id: 2,
+      title: "STUMBLE GUYS X CLASH ROYALE",
+      date: "31 august",
+      location: "Online mode",
+      prize: "2000",
+      description: "The ultimate showdown between the best gaming teams in campus",
+      image: "./stumble.jpg",
+      status: "finished",
+      category: "Tournament",
+    },
+    
+
     
   ]
 
@@ -49,7 +62,7 @@ export default function UpcomingEvents() {
         return "bg-green-600 text-white"
       case "Free Entry":
         return "bg-blue-600 text-white"
-      case "Invitation Only":
+      case "finished":
         return "bg-purple-600 text-white"
       default:
         return "bg-gray-600 text-white"

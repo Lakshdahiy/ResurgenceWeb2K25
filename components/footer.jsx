@@ -37,7 +37,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">R</span>
+                  <img
+                className="w-full h-full object-cover"
+                src="/res.png"
+                alt="Resurgence Logo"
+              />
               </div>
               <span className="text-2xl font-bold text-white">RESURGENCE</span>
             </div>
@@ -88,8 +92,8 @@ export default function Footer() {
                 <span className="text-white/80">+91 9896096559</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-white flex-shrink-0" />
-                <span className="text-white/80">National Institute of Technology Hamirpur</span>
+               
+                
               </div>
             </div>
           </div>

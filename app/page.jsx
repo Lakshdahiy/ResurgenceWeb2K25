@@ -10,6 +10,7 @@ import UpcomingEvents from "@/components/upcoming-events"
 import Footer from "@/components/footer"
 import Loader from "@/components/loader"
 
+
 export default function Home() {
   const [loading, setLoading] = useState(true)
 

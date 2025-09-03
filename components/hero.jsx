@@ -1,12 +1,7 @@
 "use client"
+import Image from "next/image"
 
 export default function Hero() {
-  const services = [
-    { number: "01", title: "Team Management", color: "text-orange-300" },
-    { number: "02", title: "Tournament Strategy", color: "text-yellow-300" },
-    { number: "03", title: "Brand Partnerships", color: "text-orange-200" },
-    { number: "04", title: "Content Creation", color: "text-red-200" },
-  ]
 
   return (
     <section id="home" className="min-h-screen hero-gradient relative overflow-hidden">
@@ -25,10 +20,13 @@ export default function Hero() {
 
           {/* Center Image */}
           <div className="relative lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
-            <img
-              src="/Hero.png"
+            <Image
+              src="/Hero.webp"
               alt="Gaming Champion Victory Pose"
-              className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] w-auto object-contain"
+              width={700}
+              height={700}
+              className="w-full max-w-[700px] h-auto object-contain"
+              priority
             />
           </div>
 

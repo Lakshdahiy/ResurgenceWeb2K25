@@ -810,29 +810,15 @@ const ProfileCardComponent = ({
 
 const ProfileCard = React.memo(ProfileCardComponent);
 
-// --- ProfileCardGrid Component ---
-const ProfileCardGrid = ({ profiles }) => {
-  return (
-    <div className="pc-grid-container">
-      {profiles.map((profile, index) => (
-        <ProfileCard
-          key={index}
-          {...profile}
-        />
-      ))}
-    </div>
-  );
-};
-
 // --- Team Sidebar Component ---
-function TeamSidebar({ onSelectYear, onClose }) {
+function TeamSidebar({ onSelectYear, onClose, open }) {
   const handleItemClick = (yearTitle) => {
     onSelectYear(yearTitle);
     onClose();
   };
 
   return (
-    <div className="sidebar-container p-6 text-gray-200 font-inter">
+    <div className={`sidebar-container p-6 text-gray-200 font-inter${open ? " open" : ""}`}>
       {/* Sidebar Header */}
       <div className="mb-6 text-center">
         <h1 className="text-3xl font-extrabold text-white mb-2">
@@ -891,11 +877,12 @@ function TeamSidebar({ onSelectYear, onClose }) {
   );
 }
 // --- App Component (Main) ---
-// --- App Component (Main) ---
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  // Set default selected year to 'Final Year'
   const [selectedYear, setSelectedYear] = useState('Final Year');
+
+  // Detect mobile device
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -906,7 +893,6 @@ const App = () => {
   };
 
   const filteredProfiles = useMemo(() => {
-    // Filter profiles based on selectedYear
     return profilesData.filter(profile => profile.year === selectedYear);
   }, [selectedYear]);
 
@@ -914,26 +900,45 @@ const App = () => {
     <>
       <style>{styles}</style>
       <div className="main-layout-container">
-        {/* Mobile toggle button */}
         <button className="mobile-toggle-button" onClick={toggleSidebar} aria-label="Toggle navigation menu">
           {isSidebarOpen ? <X size={24} color="white" /> : <Menu size={24} color="white" />}
         </button>
-
-        {/* Sidebar container */}
-        <TeamSidebar onSelectYear={handleSelectYear} onClose={() => setIsSidebarOpen(false)} />
+        <TeamSidebar
+          onSelectYear={handleSelectYear}
+          onClose={() => setIsSidebarOpen(false)}
+          open={isSidebarOpen}
+        />
         <div className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={() => setIsSidebarOpen(false)} />
-
-        {/* Main content area */}
         <div>
           <header className="App-header">
             <h1>{selectedYear}</h1>
           </header>
           <main>
-            <ProfileCardGrid profiles={filteredProfiles} />
+            <ProfileCardGrid
+              profiles={filteredProfiles}
+              enableTilt={!isMobile}
+              enableMobileTilt={false}
+            />
           </main>
         </div>
       </div>
     </>
+  );
+};
+
+// Only keep this definition of ProfileCardGrid!
+const ProfileCardGrid = ({ profiles, enableTilt, enableMobileTilt }) => {
+  return (
+    <div className="pc-grid-container">
+      {profiles.map((profile, index) => (
+        <ProfileCard
+          key={index}
+          {...profile}
+          enableTilt={enableTilt}
+          enableMobileTilt={enableMobileTilt}
+        />
+      ))}
+    </div>
   );
 };
 
