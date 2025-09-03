@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Calendar, MapPin, Trophy, Users } from "lucide-react"
-
+import { useRouter } from "next/navigation"
 export default function UpcomingEvents() {
   const [currentSlide, setCurrentSlide] = useState(0)
-
+  const router=useRouter()
   const events = [
     {
       id: 1,
@@ -188,11 +188,11 @@ export default function UpcomingEvents() {
         </div>
 
         {/* View All Events Button */}
-        {/*<div className="text-center mt-12">
-          <button className="bg-white text-red-800 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+        {<div className="text-center mt-12">
+          <button onClick={() => router.push("/events")}  className="bg-white text-red-800 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
             View All Events
           </button>
-        </div>*/}
+        </div>}
       </div>
     </section>
   )

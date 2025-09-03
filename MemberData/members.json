@@ -125,7 +125,8 @@
     "discord": "",
     "fav_game": "",
     "email": "24bee104@nith.ac.in",
-    "avatarSize": 1.8
+    "avatarSize": 1.8,
+    "miniAvatarUrl":"https://media.licdn.com/dms/image/v2/D4D03AQFMG-Kg_E42jA/profile-displayphoto-shrink_400_400/B4DZbY1XwgGYAg-/0/1747394599559?e=1759968000&v=beta&t=0FEO3CEuBV1OIidzGeeTpjxnoEI1NUA9QY8jelMR4Ec"
   },
   {
     "name": "Nitish Dhiman",
@@ -226,6 +227,18 @@
     "avatarSize": 1.2,
     "hometown": "Nurpur"
   },
+   {
+    "name": "Gunjan",
+    "branch": "Civil",
+    "hometown": "Mandi",
+    "year": "Sophomore",
+    "driveLink": "https://drive.google.com/open?",
+    "linkedin": "https://www.linkedin.com/in/gunjan-21b402314?utm_source=share&utm_ca",
+    "discord": "https://discordapp.com/users/gunjian_283",
+    "email": "guunjan283@gmail.com",
+    "fav_game": "OSU!",
+    "avatarUrl": "/Gunjan.png"
+  },
   {
     "name": "Aryan Sharma",
     "branch": "Mechanical",
@@ -279,6 +292,17 @@
     "hometown": "Bilaspur, Himachal Pradesh"
   },
   {
+    "name": "G SRIVIDYA",
+    "branch": "Architecture",
+    "hometown": "Warangal Telangana",
+    "year": "Sophomore",
+    "driveLink": "https://drive.google.com/open?",
+    "linkedin": "https://www.linkedin.com/in/g-srividya-b06959376?utm_source=share&utm",
+    "email": "24bar048@nith.ac.in",
+    "fav_game": "BGMI",
+    "avatarUrl": "/G_SRIVIDYA.png"
+  },
+  {
     "name": "Satyam Dhiman",
     "branch": "Civil",
     "year": "Sophomore",
@@ -289,6 +313,17 @@
     "email": "24bce070@nith.ac.in",
     "drive": "https://drive.google.com/open?",
     "hometown": "Mandi"
+  },
+  {
+    "name": "Kritika Bhandari",
+    "branch": "Electronics and Communication",
+    "hometown": "Solan",
+    "year": "Sophomore",
+    "driveLink": "https://drive.google.com/open?",
+    "linkedin": "https://www.linkedin.com/in/kritika-bhandari-a6abb0327?utm=share",
+    "email": "24bec059@nith.ac.in",
+    "favoriteGame": "",
+    "avatarUrl": "/Kritika_Bhandari.png"
   },
   {
     "name": "Aditya Chauhan",
@@ -352,19 +387,56 @@
     "driveLink": "https://drive.google.com/open?",
     "linkedin": "https://www.linkedin.com/in/ayush-singh-006b9b341?utm_source=share&utm",
     "email": "ayushasingh1108@gmail.com",
-    "favoriteGame": "Red Dead Redemption 2",
+    "fav_game": "Red Dead Redemption 2",
     "avatarUrl": "/Ayush_Singh.png"
   },
+  
+  
   {
-    "name": "G SRIVIDYA",
-    "branch": "Architecture",
-    "hometown": "Warangal Telangana",
-    "year": "Sophomore",
+    "name": "Harshit Parti",
+    "branch": "Electronics and Communication",
+    "hometown": "Hamirpur",
+    "year": "Final Year",
     "driveLink": "https://drive.google.com/open?",
-    "linkedin": "https://www.linkedin.com/in/g-srividya-b06959376?utm_source=share&utm",
-    "email": "24bar048@nith.ac.in",
-    "favoriteGame": "BGMI",
-    "avatarUrl": "/G_SRIVIDYA.png"
+    "linkedin": "https://www.linkedin.com/in/harshit-parti",
+    "email": "parti3harshit@gmail.com",
+    "fav_game": "",
+    "avatarUrl": "/Harshit_Parti.png",
+    "avatarSize":1.2
+  },
+  {
+    "name": "Vinayak Tiwari",
+    "branch": "Electrical Engineering",
+    "hometown": "Lucknow, UP",
+    "year": "PreFinal Year",
+    "driveLink": "https://drive.google.com/open?",
+    "linkedin": "https://www.linkedin.com/in/tiwari31vinayak?utm_source=share&utm_camp",
+    "email": "tiwari31vinayak@gmail.com",
+    "fav_game": "Valorant",
+    "avatarUrl": "/Vinayak_Tiwari.png"
+  },
+  {
+    "name": "Shivendra Kumar",
+    "branch": "Electrical Engineering",
+    "hometown": "Bihar",
+    "year": "PreFinal Year",
+    "driveLink": "https://drive.google.com/open?",
+    "linkedin": "https://www.linkedin.com/in/shivendra-kumar-8b4327292",
+    "email": "shivendrakumar1686@gmail.com",
+    "fav_game": "BGMI",
+    "avatarUrl": "/Shivendra_Kumar.png"
+  },
+ 
+  {
+    "name": "Anupam Alok",
+    "branch": "Mechanical",
+    "hometown": "Varanasi",
+    "year": "Final Year",
+    "driveLink": "https://drive.google.com/open?",
+    "linkedin": "",
+    "email": "anuptt6677@gmail.com",
+    "fav_game": "heathcliff4098",
+    "avatarUrl": "/Anup_tiwari.png"
   }
 
 

@@ -16,7 +16,7 @@ export default function Footer() {
     { name: "About", href: "about" },
     { name: "Team", href: "team" },
     { name: "Sponsors", href: "#sponsors" },
-    { name: "Events", href: "#events" },
+    { name: "Events", href: "events" },
     
   ]
 

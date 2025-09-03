@@ -765,7 +765,7 @@ const ProfileCardComponent = ({
               }}
             />
             {showUserInfo && (
-              <div className="pc-user-info">
+              <div className="pc-user-info" >
                 <div className="pc-user-details">
                   <div className="pc-mini-avatar">
                     <img
