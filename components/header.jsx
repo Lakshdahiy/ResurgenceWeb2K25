@@ -42,9 +42,9 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
-           
-              <span className="text-2xl font-bold text-white">Resurgence</span>
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <img src="/resurgence_logo_white.png" className="h-12 w-12 sm:h-12 sm:w-12 md:h-15 md:w-15 flex-shrink-0" alt="Resurgence Logo"/>
+              <span className="text-xl sm:text-2xl font-bold text-white">Resurgence</span>
             </div>
 
             {/* Desktop Navigation */}
