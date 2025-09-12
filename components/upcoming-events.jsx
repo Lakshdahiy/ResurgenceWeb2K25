@@ -22,6 +22,19 @@ export default function UpcomingEvents() {
     },
     {
       id: 2,
+      title: "Resurgence BGMI KickOff",
+      date: "15 september",
+      location: "Online mode",
+      prize: "2000 INR",
+      participants: "20 Teams (can be updated)",
+      description: "The ultimate showdown between the best gaming teams in campus",
+      image: "BGMI.jpg",
+      status: "Upcoming",
+      category: "Tournament",
+      registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLScRkUr-vxMZfj0KAXk8ToS55_XnihicrfB_56QOEdP4Irw2ag/viewform?usp=header"
+    },
+    {
+      id: 3,
       title: "STUMBLE GUYS X CLASH ROYALE",
       date: "31 august",
       location: "Online mode",
