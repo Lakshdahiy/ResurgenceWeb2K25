@@ -29,7 +29,7 @@ export default function UpcomingEvents() {
       participants: "20 Teams (can be updated)",
       description: "The ultimate showdown between the best gaming teams in campus",
       image: "BGMI.jpg",
-      status: "Upcoming",
+      status: "completed",
       category: "Tournament",
       registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLScRkUr-vxMZfj0KAXk8ToS55_XnihicrfB_56QOEdP4Irw2ag/viewform?usp=header"
     },
