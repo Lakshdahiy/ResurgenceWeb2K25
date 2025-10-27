@@ -17,7 +17,7 @@ export default function Header() {
         setIsVisible(false)
       } else {
         setIsVisible(true)
-      }
+      } 
       lastScrollY.current = currentScrollY
     }
 
@@ -33,7 +33,8 @@ export default function Header() {
     { name: "About", href: "/about" },
     { name: "Team", href: "/team" },
     
-    {name: "Events", href:"/events"}
+    {name: "Events", href:"/events"},
+    { name: "Hall Of Fame", href: "/HallOfFame" },
   ]
 
   return (
@@ -44,7 +45,7 @@ export default function Header() {
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
               <img src="/resurgence_logo_white.png" className="h-12 w-12 sm:h-12 sm:w-12 md:h-15 md:w-15 flex-shrink-0" alt="Resurgence Logo"/>
-              <span className="text-xl sm:text-2xl font-bold text-white">Resurgence</span>
+              <span className="text-xl sm:text-2xl font-bold text-white" >Resurgence</span>
             </div>
 
             {/* Desktop Navigation */}

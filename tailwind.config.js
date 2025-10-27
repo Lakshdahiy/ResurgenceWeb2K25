@@ -1,3 +1,5 @@
+
+
 module.exports = {
   content: [
     "./pages/**/*.{js,jsx,mdx}",
@@ -49,6 +51,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        sprintura:["Sprintura","sans-serif"]
       },
       backgroundImage: {
         "hero-gradient": "linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #dc2626 50%, #991b1b 75%, #7f1d1d 100%)",

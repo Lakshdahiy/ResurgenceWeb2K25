@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Sprintura';
+  src: url('/fonts/SprinturaDemo.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+   /* ✅ ensures text is visible during font load */
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -78,3 +86,11 @@
   animation: spin-slow 2s linear infinite;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}

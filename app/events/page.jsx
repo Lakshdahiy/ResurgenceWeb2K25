@@ -8,6 +8,25 @@ import LeaderboardPage from "../../components/ui/Leaderboard";
 export default function App() {
   const eventsData = [
     {
+      id: 4,
+      title: 'Stumble Guys Fresher Fiesta',
+      type: 'COMPETITION',
+      description: '',
+      date: '31 August',
+      time: '2:00 PM IST',
+      location: 'Online',
+      participants: 'Limited',
+      prizePool: '2000',
+      image: 'https://wallpapers.com/images/hd/stumble-guys-gameplay-action-68j4bixik1ns6nuj.jpg',
+      label: 'Completed',
+      status: 'past',
+      pastDetails: {
+        winners: ["God pranjall"],
+        highlights:
+          ''
+      }
+    },
+    {
       id: 1,
       title: 'Resurgence BGMI KickOff',
       type: 'TOURNAMENT',
@@ -19,8 +38,9 @@ export default function App() {
       prizePool: 'Yet to be Revealed',
       image: 'https://i.pinimg.com/736x/9c/eb/61/9ceb61e3b21e0f6316b72685c9248e77.jpg',
       label: 'Completed',
-      status: 'Completed',
-      leaderBoard:'../leaderboards/BGMI-kickoff.json',
+      status: 'past',
+      leaderBoard: '/BGMI-kickoff.json',
+
       pastDetails: {
         winners: ["The TALISMANS "],
         highlights:
@@ -31,7 +51,7 @@ export default function App() {
       id: 2,
       title: 'Squid Game Challenge',
       type: 'Game',
-      description: '',
+      description: 'You Know What It is, don"t you',
       date: '8 November',
       time: '3-5 PM',
       location: 'Ground',
@@ -39,7 +59,7 @@ export default function App() {
       prizePool: 'N/A',
       image: '/Squid.jpg',
       label: 'Completed',
-      status: 'Completed'
+      status: 'past'
     },
     {
       id: 3,
@@ -173,19 +193,22 @@ export default function App() {
 
   
 
-const EventDetailsModal = ({ event, onClose }) => {
+ const EventDetailsModal = ({ event, onClose }) => {
   if (!event) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80">
-      <div className="bg-black text-gray-100 rounded-xl p-8 w-full max-w-2xl font-mono relative border border-orange-600/50 shadow-lg shadow-orange-500/20">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-2 sm:p-4 md:p-6">
+      {/* Scrollable container */}
+      <div className="relative w-full max-w-2xl bg-black text-gray-100 rounded-xl border border-orange-600/50 shadow-lg shadow-orange-500/20 overflow-y-auto max-h-[90vh] p-5 sm:p-6 hide-scrollbar">
+        
+        {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-100 transition-colors"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-400 hover:text-gray-100 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
+            className="w-6 h-6 sm:w-7 sm:h-7"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -199,49 +222,61 @@ const EventDetailsModal = ({ event, onClose }) => {
           </svg>
         </button>
 
-        <h2 className="text-3xl font-extrabold text-orange-400 mb-4">
+        {/* Modal Content */}
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-orange-400 mb-3 sm:mb-4 break-words">
           {event.title}
         </h2>
-        <p className="text-lg text-gray-300 mb-6">{event.description}</p>
+
+        <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+          {event.description}
+        </p>
 
         {event.status === "past" && event.pastDetails && (
-          <div className="mt-4 pt-4 border-t border-gray-700 space-y-4">
+          <div className="mt-4 pt-4 border-t border-gray-700 space-y-5 sm:space-y-6">
+            {/* Winners Section */}
             <div>
-              <h3 className="text-xl font-bold text-orange-400 mb-2">Winners</h3>
-              <ul className="list-disc list-inside space-y-1 text-gray-300">
+{event.pastDetails.winners.length > 0 && (
+  <h3 className="text-lg sm:text-xl font-bold text-orange-400 mb-2">
+    Winners
+  </h3>
+)}              <ul className="list-disc list-inside space-y-1 text-gray-300">
+
                 {event.pastDetails.winners.map((winner, index) => (
                   <li key={index} className="flex items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5 text-orange-400 mr-2 flex-shrink-0"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 mr-2 flex-shrink-0"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
                       <path d="M12 2L2 22h20L12 2zm0 17L5 12h14l-7 7z" />
                     </svg>
-                    {winner}
+                    
+                    <span className="break-words">{winner}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
+            {/* Highlights Section */}
             <div>
-              <h3 className="text-xl font-bold text-orange-400 mb-2">
-                Highlights
+              <h3 className="text-lg sm:text-xl font-bold text-orange-400 mb-2">
+                
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed break-words">
                 {event.pastDetails.highlights}
               </p>
             </div>
 
-            {/* 👇 Leaderboard Section */}
-            <div className="mt-8">
-              <h3 className="text-2xl font-bold text-orange-400 mb-4">
-                Leaderboard
+            {/* Leaderboard Section */}
+            <div className="mt-6 sm:mt-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-orange-400 mb-3 sm:mb-4">
+                
               </h3>
+              {event.leaderBoard&&(
               <div className="border border-gray-700 rounded-lg overflow-hidden shadow-inner">
-                <LeaderboardPage />
-              </div>
+                <LeaderboardPage source={event.leaderBoard} />
+              </div>)}
             </div>
           </div>
         )}
@@ -249,6 +284,7 @@ const EventDetailsModal = ({ event, onClose }) => {
     </div>
   );
 };
+
 
 
 
@@ -263,8 +299,9 @@ const EventDetailsModal = ({ event, onClose }) => {
               <EventCard key={event.id} event={event} onLearnMoreClick={setSelectedEvent} />
             ))}
           </div>
-          <EventDetailsModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+          
         </div>
+        <EventDetailsModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
       </main>
       <Footer />
     </>
