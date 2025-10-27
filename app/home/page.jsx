@@ -9,6 +9,7 @@ import Sponsors from "@/components/sponsors"
 import UpcomingEvents from "@/components/upcoming-events"
 import Footer from "@/components/footer"
 import Loader from "@/components/loader"
+import CurrSponsors from "../../components/crntSponsors";
 
 export default function Home() {
   
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <ClientsAndAbout />
         <LogoSection />
+        <CurrSponsors/>
         <Sponsors />
         <UpcomingEvents />
         <Footer />
