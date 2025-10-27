@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import LeaderboardPage from "../../components/ui/Leaderboard";
 
 export default function App() {
   const eventsData = [
@@ -18,7 +19,13 @@ export default function App() {
       prizePool: 'Yet to be Revealed',
       image: 'https://i.pinimg.com/736x/9c/eb/61/9ceb61e3b21e0f6316b72685c9248e77.jpg',
       label: 'Completed',
-      status: 'Completed'
+      status: 'Completed',
+      leaderBoard:'../leaderboards/BGMI-kickoff.json',
+      pastDetails: {
+        winners: ["The TALISMANS "],
+        highlights:
+          ''
+      }
     },
     {
       id: 2,
@@ -164,46 +171,87 @@ export default function App() {
     </div>
   );
 
-  const EventDetailsModal = ({ event, onClose }) => {
-    if (!event) return null;
+  
 
-    return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80">
-        <div className="bg-black text-gray-100 rounded-xl p-8 w-full max-w-2xl font-mono relative border border-orange-600/50 shadow-lg shadow-orange-500/20">
-          <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-100 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+const EventDetailsModal = ({ event, onClose }) => {
+  if (!event) return null;
 
-          <h2 className="text-3xl font-extrabold text-orange-400 mb-4">{event.title}</h2>
-          <p className="text-lg text-gray-300 mb-6">{event.description}</p>
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80">
+      <div className="bg-black text-gray-100 rounded-xl p-8 w-full max-w-2xl font-mono relative border border-orange-600/50 shadow-lg shadow-orange-500/20">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-100 transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
 
-          {event.status === 'past' && event.pastDetails && (
-            <div className="mt-4 pt-4 border-t border-gray-700 space-y-4">
-              <div>
-                <h3 className="text-xl font-bold text-orange-400 mb-2">Winners</h3>
-                <ul className="list-disc list-inside space-y-1 text-gray-300">
-                  {event.pastDetails.winners.map((winner, index) => (
-                    <li key={index} className="flex items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-orange-400 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 22h20L12 2zm0 17L5 12h14l-7 7z" />
-                      </svg>
-                      {winner}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-orange-400 mb-2">Highlights</h3>
-                <p className="text-gray-300 leading-relaxed">{event.pastDetails.highlights}</p>
+        <h2 className="text-3xl font-extrabold text-orange-400 mb-4">
+          {event.title}
+        </h2>
+        <p className="text-lg text-gray-300 mb-6">{event.description}</p>
+
+        {event.status === "past" && event.pastDetails && (
+          <div className="mt-4 pt-4 border-t border-gray-700 space-y-4">
+            <div>
+              <h3 className="text-xl font-bold text-orange-400 mb-2">Winners</h3>
+              <ul className="list-disc list-inside space-y-1 text-gray-300">
+                {event.pastDetails.winners.map((winner, index) => (
+                  <li key={index} className="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5 text-orange-400 mr-2 flex-shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 2L2 22h20L12 2zm0 17L5 12h14l-7 7z" />
+                    </svg>
+                    {winner}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-orange-400 mb-2">
+                Highlights
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                {event.pastDetails.highlights}
+              </p>
+            </div>
+
+            {/* 👇 Leaderboard Section */}
+            <div className="mt-8">
+              <h3 className="text-2xl font-bold text-orange-400 mb-4">
+                Leaderboard
+              </h3>
+              <div className="border border-gray-700 rounded-lg overflow-hidden shadow-inner">
+                <LeaderboardPage />
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
-    );
-  };
+    </div>
+  );
+};
+
+
+
 
   return (
     <>

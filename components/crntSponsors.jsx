@@ -22,8 +22,8 @@ const router = useRouter()
 
 
          
-          <div className="w-90 h-30 flex items-center justify-center">
-            <div className="w-90 h-30 rounded-xl overflow-hidden shadow-md flex justify-center">
+          <div className="w-75 h-25 flex items-center justify-center">
+            <div className="w-75 h-25 rounded-xl overflow-hidden shadow-md flex justify-center">
               <img
                 className="w-full h-full object-cover"
                 src="https://assets.krafton.in/files/social-media-default-screen.jpg"
