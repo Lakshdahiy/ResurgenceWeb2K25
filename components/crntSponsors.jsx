@@ -7,7 +7,7 @@ export default function CurrSponsors() {
 const router = useRouter()
   return (
     <section id="sponsors" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-3">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-2">
         {/* Title and description */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white text-shadow">Our Current Sponsors</h2>
@@ -16,14 +16,14 @@ const router = useRouter()
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-32 md:space-y-0 md:space-x-16">
           
 
 
          
-          <div className="w-120 h-40 flex items-center justify-center">
-            <div className="w-120 h-60 rounded-xl overflow-hidden shadow-md">
+          <div className="w-90 h-30 flex items-center justify-center">
+            <div className="w-90 h-30 rounded-xl overflow-hidden shadow-md flex justify-center">
               <img
                 className="w-full h-full object-cover"
                 src="https://assets.krafton.in/files/social-media-default-screen.jpg"
