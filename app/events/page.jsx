@@ -12,13 +12,13 @@ export default function App() {
       type: 'TOURNAMENT',
       description: 'The ultimate showdown between the best gaming teams in campus.',
       date: '5-6-7 September',
-      time: '7:00 PM EST',
+      time: '7:00 PM IST',
       location: 'Online mode',
       participants: '20 Teams (can be updated)',
       prizePool: 'Yet to be Revealed',
       image: 'https://i.pinimg.com/736x/9c/eb/61/9ceb61e3b21e0f6316b72685c9248e77.jpg',
-      label: 'Upcoming',
-      status: 'upcoming'
+      label: 'Completed',
+      status: 'Completed'
     },
     {
       id: 2,
