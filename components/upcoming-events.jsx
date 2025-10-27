@@ -2,38 +2,49 @@
 
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Calendar, MapPin, Trophy, Users } from "lucide-react"
-import { useRouter } from "next/navigation"
+
 export default function UpcomingEvents() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const router=useRouter()
+
   const events = [
     {
       id: 1,
-      title: "Resurgence BGMI KickOff",
-      date: "5-6-7 September",
-      time: "7:00 PM EST",
+      title: "Resurgence valorant KickOff",
+      date: "yet to be Revealed",
       location: "Online mode",
-      prize: "Yet to be Revealed",
+      prize: "3000 INR",
       participants: "20 Teams (can be updated)",
       description: "The ultimate showdown between the best gaming teams in campus",
-      image: "https://i.pinimg.com/736x/9c/eb/61/9ceb61e3b21e0f6316b72685c9248e77.jpg",
+      image: "valorant.jpg",
       status: "Upcoming",
       category: "Tournament",
+      registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeci6-QhId07NH84XwgJtULDEUPBxmiIJ7_ak3X6fGIZNExvw/viewform?usp=header"
     },
-        {
+    {
       id: 2,
+      title: "Resurgence BGMI KickOff",
+      date: "15 september",
+      location: "Online mode",
+      prize: "2000 INR",
+      participants: "20 Teams (can be updated)",
+      description: "The ultimate showdown between the best gaming teams in campus",
+      image: "BGMI.jpg",
+      status: "completed",
+      category: "Tournament",
+      registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLScRkUr-vxMZfj0KAXk8ToS55_XnihicrfB_56QOEdP4Irw2ag/viewform?usp=header"
+    },
+    {
+      id: 3,
       title: "STUMBLE GUYS X CLASH ROYALE",
       date: "31 august",
       location: "Online mode",
       prize: "2000",
       description: "The ultimate showdown between the best gaming teams in campus",
       image: "./stumble.jpg",
-      status: "finished",
+      status: "completed",
       category: "Tournament",
+      registerUrl: "https://your-google-form-link-2.com"
     },
-    
-
-    
   ]
 
   const nextSlide = () => {
@@ -62,7 +73,7 @@ export default function UpcomingEvents() {
         return "bg-green-600 text-white"
       case "Free Entry":
         return "bg-blue-600 text-white"
-      case "finished":
+      case "completed":
         return "bg-purple-600 text-white"
       default:
         return "bg-gray-600 text-white"
@@ -74,7 +85,7 @@ export default function UpcomingEvents() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white text-shadow">Upcoming Events</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white text-shadow"> Events</h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             Don't miss out on our exciting tournaments, competitions, and community events.
           </p>
@@ -157,9 +168,20 @@ export default function UpcomingEvents() {
                         </div>
 
                         {/* CTA Button */}
-                        <button className="bg-red-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-900 transition-colors duration-300 w-fit">
-                          Learn More
-                        </button>
+                        {event.status === "completed" ? (
+                          <div className="bg-purple-900/60 text-purple-200 px-6 py-3 rounded-lg font-semibold text-center">
+                            This event is completed. Register for upcoming events!
+                          </div>
+                        ) : (
+                          <a
+                            href={event.registerUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-red-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-900 transition-colors duration-300 w-fit text-center"
+                          >
+                            Register Now
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -201,12 +223,13 @@ export default function UpcomingEvents() {
         </div>
 
         {/* View All Events Button */}
-        {<div className="text-center mt-12">
-          <button onClick={() => router.push("/events")}  className="bg-white text-red-800 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+        {/*<div className="text-center mt-12">
+          <button className="bg-white text-red-800 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
             View All Events
           </button>
-        </div>}
+        </div>*/}
       </div>
     </section>
   )
 }
+
