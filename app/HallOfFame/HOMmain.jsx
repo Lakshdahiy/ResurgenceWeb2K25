@@ -11,8 +11,16 @@ const hallOfFameData = [
         eventLink: '/events'
     },
     {
+        id: 6,
+        imgSrc: 'https://i.pinimg.com/736x/9f/e3/39/9fe3395929c45628930c44e3b6449194.jpg',
+        title: 'Aniket Kumar Singh',
+        description: 'Won the Clash Royale Fresher Fiesta this year',
+        eventLink: '/events'
+    },
+    
+    {
         id: 5,
-        imgSrc: 'https://i.pinimg.com/736x/e4/bf/16/e4bf16bd08531c1fee0bf1af5e0e1857.jpg',
+        imgSrc: 'https://i.pinimg.com/736x/46/9e/f5/469ef5a2ed06420a7b915bc34ef9f340.jpg',
         title: 'God pranjall',
         description: 'Winner of Stumble Guys Fresher Fiesta ',
         eventLink: '/events'
